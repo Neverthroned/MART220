@@ -23,15 +23,16 @@ var i3spdy = 0;
 var img1;
 var img2;
 var img3;
+
 function preload() {
 
   //images
-  img1 = loadImage('./images/image1.png');
-  img2 = loadImage('./images/image2.png');
-  img3 = loadImage('./images/image3.png');
+  img1 = loadImage('images/image1.png');
+  img2 = loadImage('images/image2.png');
+  img3 = loadImage('images/image3.png');
 
   //font
-  myFont = loadFont('./fonts/CooperHewitt-Light.otf');
+  myFont = loadFont('fonts/CooperHewitt-Light.otf');
 }
 
 function setup() {
@@ -39,6 +40,9 @@ function setup() {
   setInterval(changeTime, 1000);
 
   createCanvas(600, 600);
+  img1.resize(100, 100);
+  img2.resize(100, 100);
+  img3.resize(100, 100);
 }
 
 function draw() {
@@ -57,24 +61,35 @@ function draw() {
   fill(200, 1, 200);
   image(img1, i1x, i1y);
   i1x += i1spd;
-  if(i1x >= 600 || i1x <= 0)
+  i1y += i1spdy;
+  if(i1x >= 550 || i1x <= 0)
     {
       i1spd *= -1;
+    }
+  if(i1y >=600 || i1y <= 0)
+    {
+      i1y = 0;
     }
 
   //image 2
   image(img2, i2x, i2y);
   i2x += i2spd;
-  if(i2x >= 600 || i2x <= 0)
+  i2y += i2spdy;
+  if(i2x >= 550 || i2x <= 0)
     {
       i2spd *= -1;
     }
+  if(i2y >=600 || i2y <= 0)
+    {
+      i2y = 0;
+    }
+  
 
   //image 3
   image(img3, i3x, i3y);
   i3x += i3spdx;
   i3y += i3spdy;
-  if(i3x >= 600 || i3x <= 0)
+  if(i3x >= 550 || i3x <= 0)
     {
       i3spdx *= -1;
     }
@@ -88,11 +103,11 @@ function draw() {
     {
       i3spdy = 3
     }
-  if(myTime == 0 && i3spdy > 0)
+  if(myTime == 1 && i3spdy > 0)
     {
       i2spdy = 1
     }
-  if(myTime == 0 && i2spdy > 0)
+  if(myTime == 2 && i2spdy > 0)
     {
       i1spdy = 2
     }
