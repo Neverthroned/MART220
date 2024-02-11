@@ -55,7 +55,8 @@ function draw() {
 
   //text
   textFont(myFont);
-  text("Bridger Burkes", 480, 580)
+  text("Bridger Burkes", 480, 580);
+  text("Baked Potato 2.0", 200, 20);
 
   //images
   fill(200, 1, 200);
