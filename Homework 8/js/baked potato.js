@@ -35,6 +35,9 @@ var good;
 var bad;
 var badSoundPlayed = false;
 
+//other library
+let glitch;
+
 
 function preload() {
     idleStrings = loadStrings("../textFiles/idleStrings.txt");
@@ -45,10 +48,14 @@ function preload() {
     good = loadSound('./sounds/good.wav');
     bad = loadSound('./sounds/bad.wav');
 
+
+
 }
 
 function setup() {
     createCanvas(800, 800);
+
+    glitch = new Glitch();
 
     //animations
     for (let k = 0; k < idleStrings.length; k++) {
@@ -76,6 +83,13 @@ function setup() {
 function draw() {
     background(120);
 
+    glitch.loadImage('../images/image (3).png');
+    glitch.randomBytes(5);
+    glitch.replaceBytes(45, 127);
+    glitch.buildImage(); // creates image from glitched data
+    image(glitch.image, 0, 0); // display glitched image
+
+
     hazard1.draw();
 
     //food if not null
@@ -89,7 +103,7 @@ function draw() {
         //check for death first and foremost... unfortunately looped death animation, prolly fixable
         if (walkArray[l].checkCollision(hazard1.x, hazard1.y, hazard1.w, hazard1.h) || idleArray[l].checkCollision(hazard1.x, hazard1.y, hazard1.w, hazard1.h)) {
             objDraw = deadArray;
-            
+
             //stop looped bad sound if already played... ow my ears
             if (!badSoundPlayed) {
                 bad.play();
