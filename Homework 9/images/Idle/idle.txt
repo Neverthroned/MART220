@@ -1,0 +1,10 @@
+./images/Idle/Idle (1).png
+./images/Idle/Idle (2).png
+./images/Idle/Idle (3).png
+./images/Idle/Idle (4).png
+./images/Idle/Idle (5).png
+./images/Idle/Idle (6).png
+./images/Idle/Idle (7).png
+./images/Idle/Idle (8).png
+./images/Idle/Idle (9).png
+./images/Idle/Idle (10).png
