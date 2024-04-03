@@ -86,7 +86,7 @@ function draw() {
     //Health
     updateHp(hp, maxHp);
 
-    //hazard
+    //hazard food collision
 
     //score
     fill(50, 200, 209);
@@ -95,6 +95,7 @@ function draw() {
     text("Score: " + score, 400, 50);
 
     //controls and flipping
+    if (score != 10) {
     if (dead == false) {
         if (kb.pressing('d')) {
             if (myAnimation.isColliding(wall)) {
@@ -172,6 +173,8 @@ function draw() {
     else {
         myAnimation.drawAnimation('dead');
     }
+    }
+
     if (score == 10) {
         winObj();
     } 
@@ -221,7 +224,7 @@ function newHazard() {
     hazard.img = "./images/hazard (1).png";
     hazard.scale = 0.05;
     hazard.diameter = 100;
-    if (hazard.collide(wall)) {
+    if (hazard.overlaps(wall)) {
         newHazard();
         console.log("hazard wall");
     }
@@ -234,7 +237,7 @@ function newFood() {
     food.img = "./images/image (1).png";
     food.scale = 0.05;
     food.diameter = 50;
-    if (food.collide(wall)) {
+    if (food.overlaps(wall)) {
         newFood();
         console.log("food wall");
     }

@@ -1,0 +1,10 @@
+./images/Dead/Dead (1).png
+./images/Dead/Dead (2).png
+./images/Dead/Dead (3).png
+./images/Dead/Dead (4).png
+./images/Dead/Dead (5).png
+./images/Dead/Dead (6).png
+./images/Dead/Dead (7).png
+./images/Dead/Dead (8).png
+./images/Dead/Dead (9).png
+./images/Dead/Dead (10).png
