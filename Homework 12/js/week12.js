@@ -15,6 +15,7 @@ function setup() {
 
 function draw() {
 
+    //text and main stuff
     background(220);
     textFont(myFont);
     textSize(36);
@@ -22,9 +23,11 @@ function draw() {
     text("Bridger Burkes", -50, 170);
     text("Spiral", -190, -170)
 
+    //light
     pointLight(255, 200, 200, mouseX, mouseY, 200);
     specularMaterial(100, 0, 0);
 
+    //boxes 1 & 2
     push();
     rotateZ(frameCount);
     texture(img1);
@@ -36,6 +39,7 @@ function draw() {
     box();
     pop();
 
+    //box middle/3
     push();
     texture(img1);
     rotateZ(frameCount * 0.5)
@@ -43,6 +47,7 @@ function draw() {
     box();
     pop();
 
+    //boxes 4 & 5
     push();
     rotateZ(frameCount);
     texture(img1);
@@ -54,11 +59,13 @@ function draw() {
     box();
     pop();
 
+    //plane
     push();
     translate(0, 0, -200);
     plane(1000, 1000);
     pop();
 
+    //donuts
     rotateX(frameCount * 0.1);
     rotateZ(frameCount);
     push();
